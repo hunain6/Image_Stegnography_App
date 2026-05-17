@@ -1,77 +1,73 @@
-#📸 Image Steganography with AES Encryption
+# 📸 Image Steganography with AES Encryption
 
 A secure Image Steganography system that hides encrypted messages inside images using LSB (Least Significant Bit) technique combined with AES encryption.
 
-#The project consists of:
+The project consists of:
+- 📱 Flutter Frontend
+- 🐍 Python Flask Backend (API + Encryption + Steganography Engine)
 
-📱 Flutter Frontend (User Interface)
+---
 
-🐍 Python Flask Backend (API + Encryption + Steganography Engine)
+## 🚀 Features
 
-🚀 Features
-🔐 AES-256 encryption for messages
+- 🔐 AES-256 encryption for messages
+- 🖼️ Hide encrypted messages inside images (LSB technique)
+- 🔓 Extract hidden messages using password
+- 📊 Image capacity calculation before encoding
+- 📱 Flutter UI for easy interaction
+- 🌐 REST API backend (Flask)
+- 🔄 Secure communication via HTTP requests
 
-🖼️ Hide encrypted data inside images using LSB technique
+---
 
-🔓 Extract hidden messages securely with password
-
-📊 Image capacity calculation before encoding
-
-📱 Cross-platform Flutter UI
-
-🌐 REST API backend (Flask)
-
-🔄 Secure communication via JSON / multipart requests
-
-
-🏗️ Project Structure
+## 🏗️ Project Structure
 
 Image_Stegnography_App/
 │
 ├── backend/ (Flask API)
-│   ├── app.py
-│   ├── requirements.txt
+│ ├── app.py
+│ ├── requirements.txt
 │
 ├── frontend/ (Flutter App)
-│   ├── lib/
-│   ├── pubspec.yaml
+│ ├── lib/
+│ ├── pubspec.yaml
 │
 └── README.md
 
 
-#Install dependencies:
+---
 
+## ⚙️ Backend Setup (Flask API)
+
+### 📌 Install Dependencies
+
+```bash
 pip install flask flask-cors pycryptodome opencv-python numpy Pillow
 
 ▶️ Run Backend Server
 
 python app.py
 
-#Server runs at:
-
-http://127.0.0.1:5000
 🔌 API Endpoints
-🟢 Health Check
-GET /health
-
-#Response:
 
 {
   "status": "ok",
   "service": "StegoServer v1.0"
 }
+
 🖼️ Encode Image (Hide Message)
 POST /encode
 
 Form Data:
 
-image → PNG/JPG file
-message → text message
+image → file
+message → text
 password → encryption key
 
 Response:
 
-Returns stego image (stego_image.png)
+Returns stego image (PNG)
+
 🔓 Decode Image (Extract Message)
 POST /decode
 
@@ -85,56 +81,34 @@ Response:
 {
   "message": "your hidden text"
 }
-📊 Image Capacity
-POST /capacity
 
-Form Data:
 
-image → image file
+📱 Flutter Frontend Setup
+🔗 API Base URL
 
-Response:
-
-{
-  "max_chars": 12345,
-  "dimensions": "800x600"
-}
-📱 Flutter Frontend
-
-The Flutter app provides:
-
-Image picker
-Message input field
-Password-based encryption
-Encode/Decode buttons
-API communication with Flask backend
-🔗 Backend Connection
-
-Update your API base URL in Flutter:
+For Emulator:
 
 http://127.0.0.1:5000
 
-For real device testing:
+For Physical Device:
 
 http://YOUR_PC_IP:5000
-
-#🔐 How It Works
-User enters a message + password
+🔐 How It Works
+User enters a message and password
 Message is encrypted using AES-256
 Encrypted text is hidden inside image using LSB technique
-Image is returned to user
-
-#To decode:
-Extract LSB data
-Decrypt using same password
+Image is generated and returned
+To decode:
+Extract hidden data from image
+Decrypt using the same password
 🧪 Tech Stack
 
-#Frontend:
+Frontend:
 
 Flutter
 Dart
 
-
-#Backend:
+Backend:
 
 Python
 Flask
@@ -143,16 +117,18 @@ NumPy
 PyCryptodome
 Pillow
 
-#⚠️ Important Notes
-Use PNG images for best results
-Same password is required for decoding
-Large messages may exceed image capacity
-Do NOT use compressed images (like heavily compressed JPG)
 
-#👨‍💻 Author
+⚠️ Important Notes
+Use PNG images for best results
+Same password required for decoding
+Large messages may exceed image capacity
+Avoid heavily compressed images (low quality JPGs)
+
+
+👨‍💻 Author
 
 Hunain Farhat
 
-#📜 License
+⭐ Support
 
-This project is for educational purposes.
+If you like this project, give it a star on GitHub ⭐
