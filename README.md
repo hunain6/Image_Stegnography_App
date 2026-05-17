@@ -1,20 +1,31 @@
-📸 Image Steganography with AES Encryption
+#📸 Image Steganography with AES Encryption
 
 A secure Image Steganography system that hides encrypted messages inside images using LSB (Least Significant Bit) technique combined with AES encryption.
 
-The project consists of:
+#The project consists of:
 
 📱 Flutter Frontend (User Interface)
+
 🐍 Python Flask Backend (API + Encryption + Steganography Engine)
+
 🚀 Features
 🔐 AES-256 encryption for messages
+
 🖼️ Hide encrypted data inside images using LSB technique
+
 🔓 Extract hidden messages securely with password
+
 📊 Image capacity calculation before encoding
+
 📱 Cross-platform Flutter UI
+
 🌐 REST API backend (Flask)
+
 🔄 Secure communication via JSON / multipart requests
+
+
 🏗️ Project Structure
+
 Image_Stegnography_App/
 │
 ├── backend/ (Flask API)
@@ -26,23 +37,24 @@ Image_Stegnography_App/
 │   ├── pubspec.yaml
 │
 └── README.md
-⚙️ Backend Setup (Flask API)
-📌 Requirements
 
-Install dependencies:
+
+#Install dependencies:
 
 pip install flask flask-cors pycryptodome opencv-python numpy Pillow
+
 ▶️ Run Backend Server
+
 python app.py
 
-Server runs at:
+#Server runs at:
 
 http://127.0.0.1:5000
 🔌 API Endpoints
 🟢 Health Check
 GET /health
 
-Response:
+#Response:
 
 {
   "status": "ok",
@@ -104,22 +116,25 @@ http://127.0.0.1:5000
 For real device testing:
 
 http://YOUR_PC_IP:5000
-🔐 How It Works
+
+#🔐 How It Works
 User enters a message + password
 Message is encrypted using AES-256
 Encrypted text is hidden inside image using LSB technique
 Image is returned to user
-To decode:
+
+#To decode:
 Extract LSB data
 Decrypt using same password
 🧪 Tech Stack
 
-Frontend:
+#Frontend:
 
 Flutter
 Dart
 
-Backend:
+
+#Backend:
 
 Python
 Flask
@@ -127,15 +142,17 @@ OpenCV
 NumPy
 PyCryptodome
 Pillow
-⚠️ Important Notes
+
+#⚠️ Important Notes
 Use PNG images for best results
 Same password is required for decoding
 Large messages may exceed image capacity
 Do NOT use compressed images (like heavily compressed JPG)
-👨‍💻 Author
+
+#👨‍💻 Author
 
 Hunain Farhat
 
-📜 License
+#📜 License
 
 This project is for educational purposes.
